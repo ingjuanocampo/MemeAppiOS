@@ -12,6 +12,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var topTextField: UITextField?
     @IBOutlet weak var bottomTextField: UITextField?
+    @IBOutlet weak var imagePickerView: UIImageView?
+    
+    @IBOutlet weak var cameraButton: UIButton?
+    @IBOutlet weak var shareButton: UIButton?
+    @IBOutlet weak var toolbar: UIToolbar?
+    
     var topDelegatetextField: TextDescriptionDelegate?
     var bottomDelegatetextField: TextDescriptionDelegate?
     let topDefaultText = "Top text"
@@ -24,8 +30,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeWidth: 3.0
     ]
 
-    @IBOutlet weak var imagePickerView: UIImageView?
-    @IBOutlet weak var cameraButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField?.text = topDefaultText
         topTextField?.isHidden = true
         topTextField?.defaultTextAttributes = memeTextAttributes
+        
+        shareButton?.isEnabled = false
 
         bottomTextField?.delegate = bottomDelegatetextField
         bottomTextField?.text = bottomDefaultText
@@ -53,6 +59,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func shareSelected(_ sender: Any) {
+        saveAndShare()
+    }
     
     @IBAction func pickAnImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -62,7 +71,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
-    // Cancel
+    // Cancel Image selector
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -72,37 +81,45 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         for key in info {
             if let image = key.value as? UIImage {
                 imagePickerView?.image = image
-                topTextField?.isHidden = false
-                bottomTextField?.isHidden = false
-
+                enableTextFields(enable: true)
             }
         }
         dismiss(animated: true, completion: nil)
-    
     }
     
-    func save() {
-            // Create the meme
-            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+    private func enableTextFields(enable: Bool) {
+        topTextField?.isHidden = !enable
+        bottomTextField?.isHidden = !enable
+        shareButton?.isEnabled = enable
     }
     
-   
-    
-    func generateMemedImage() -> UIImage {
-
-        // TODO: Hide toolbar and navbar
-
-        // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        // TODO: Show toolbar and navbar
-
-        return memedImage
+    func saveAndShare() {
+        if let image = imagePickerView?.image {
+            let meme = Meme(topText: topTextField?.text ?? "", bottomText: bottomTextField?.text ?? "", originalImage: image)
+            toggleViewsVisibility(isHidden: true)
+            let controller = UIActivityViewController(activityItems: [meme.generateMemedImage(view: self.view)], applicationActivities: nil)
+            controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) in
+                if completed {
+                    self.clearView()
+                }
+            }
+            
+            toggleViewsVisibility(isHidden: false)
+            present(controller, animated: true, completion: nil)
+        }
     }
     
+    private func toggleViewsVisibility(isHidden: Bool) {
+        shareButton?.isHidden = isHidden
+        toolbar?.isHidden = isHidden
+    }
+    
+    private func clearView() {
+        topTextField?.text = topDefaultText
+        bottomTextField?.text = bottomDefaultText
+        imagePickerView?.image = nil
+        enableTextFields(enable: false)
+    }
     
     // Keyboard adjustments
     

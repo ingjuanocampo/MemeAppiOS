@@ -48,6 +48,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IC-m9-SPz">
+                                <rect key="frame" x="364" y="54" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBX-7f-bG2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -63,8 +70,10 @@
                             <constraint firstItem="ZcL-vc-RdS" firstAttribute="top" secondItem="7Kk-mH-epS" secondAttribute="bottom" id="Ns0-vX-AGI"/>
                             <constraint firstItem="ZcL-vc-RdS" firstAttribute="top" secondItem="eqO-2p-f55" secondAttribute="bottom" constant="75" id="Pxe-5l-Uyw"/>
                             <constraint firstItem="7Kk-mH-epS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RqS-Wi-gK6"/>
+                            <constraint firstItem="2IC-m9-SPz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="UCt-Ov-BO6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Kk-mH-epS" secondAttribute="trailing" id="XKu-oQ-G7W"/>
                             <constraint firstItem="7Kk-mH-epS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XP9-9p-iaW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2IC-m9-SPz" secondAttribute="trailing" constant="10" id="a2X-Ol-mEt"/>
                             <constraint firstItem="4Ov-Gm-QnW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mKm-3b-Q3I"/>
                             <constraint firstItem="7Kk-mH-epS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mwK-dc-BAX"/>
                         </constraints>
@@ -74,12 +83,14 @@
                         <outlet property="bottomTextField" destination="eqO-2p-f55" id="4gx-KB-O3c"/>
                         <outlet property="cameraButton" destination="gQ4-Ar-OeG" id="SWi-FM-T8F"/>
                         <outlet property="imagePickerView" destination="7Kk-mH-epS" id="mf6-vm-pKN"/>
+                        <outlet property="shareButton" destination="2IC-m9-SPz" id="Bsr-Mk-EkT"/>
+                        <outlet property="toolbar" destination="ZcL-vc-RdS" id="i1G-YT-F5R"/>
                         <outlet property="topTextField" destination="4Ov-Gm-QnW" id="XKw-fQ-PUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
