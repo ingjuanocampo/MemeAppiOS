@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIButton?
     @IBOutlet weak var shareButton: UIButton?
     @IBOutlet weak var toolbar: UIToolbar?
+    @IBOutlet weak var clearBotton: UIButton?
     
     var topDelegatetextField: TextDescriptionDelegate?
     var bottomDelegatetextField: TextDescriptionDelegate?
@@ -42,6 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField?.defaultTextAttributes = memeTextAttributes
         
         shareButton?.isEnabled = false
+        clearBotton?.isEnabled = false
 
         bottomTextField?.delegate = bottomDelegatetextField
         bottomTextField?.text = bottomDefaultText
@@ -61,6 +63,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareSelected(_ sender: Any) {
         saveAndShare()
+    }
+    
+    @IBAction func clearSelected(_ sender: Any) {
+        clearView()
     }
     
     @IBAction func pickAnImage(_ sender: Any) {
@@ -91,6 +97,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField?.isHidden = !enable
         bottomTextField?.isHidden = !enable
         shareButton?.isEnabled = enable
+        clearBotton?.isEnabled = enable
     }
     
     func saveAndShare() {
@@ -112,6 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func toggleViewsVisibility(isHidden: Bool) {
         shareButton?.isHidden = isHidden
         toolbar?.isHidden = isHidden
+        clearBotton?.isHidden = isHidden
     }
     
     private func clearView() {
@@ -155,8 +163,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        if bottomTextField?.isEditing == true {
-            view.frame.origin.y += getKeyboardHeight(notification)
+        if bottomTextField?.isEditing == true && view.frame.origin.y != 0 {
+               self.view.frame.origin.y = 0
         }
     }
 
