@@ -36,29 +36,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         topDelegatetextField = TextDescriptionDelegate(defaultText: topDefaultText)
         bottomDelegatetextField = TextDescriptionDelegate(defaultText: bottomDefaultText)
-
-        topTextField?.delegate = topDelegatetextField
-        topTextField?.text = topDefaultText
-        topTextField?.isHidden = true
-        topTextField?.defaultTextAttributes = memeTextAttributes
-        
         shareButton?.isEnabled = false
         clearBotton?.isEnabled = false
-
-        bottomTextField?.delegate = bottomDelegatetextField
-        bottomTextField?.text = bottomDefaultText
-        bottomTextField?.isHidden = true
-        bottomTextField?.defaultTextAttributes = memeTextAttributes
-        
+        setTextField(textField: topTextField, delegate: topDelegatetextField, defaultText: topDefaultText)
+        setTextField(textField: bottomTextField, delegate: bottomDelegatetextField, defaultText: bottomDefaultText)
         cameraButton?.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
+    }
+    
+    private func setTextField(textField: UITextField?, delegate: TextDescriptionDelegate?, defaultText: String) {
+        textField?.delegate = delegate
+        textField?.text = defaultText
+        textField?.isHidden = true
+        textField?.defaultTextAttributes = memeTextAttributes
     }
 
     @IBAction func cameraSelected(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        starImagePicker(sourceType: .camera)
     }
     
     @IBAction func shareSelected(_ sender: Any) {
@@ -70,11 +63,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func pickAnImage(_ sender: Any) {
+        starImagePicker(sourceType: .photoLibrary)
+    }
+    
+    private func starImagePicker(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
-
     }
     
     // Cancel Image selector
