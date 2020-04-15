@@ -9,7 +9,7 @@ MemeApp covers many of the major UI components found in essentially every app. I
 Please review the following animation to see how it works: 
 
 
-<img src="https://github.com/ingjuanocampo/MemeAppiOS/blob/master/Apr-14-2020%2018-46-45.gif" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<img src="https://github.com/ingjuanocampo/MemeAppiOS/blob/master/demo.gif" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 
 
 
