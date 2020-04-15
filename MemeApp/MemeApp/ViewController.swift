@@ -91,6 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         dismiss(animated: true, completion: nil)
+        toolbar?.isHidden = true
     }
     
     private func enableTextFields(enable: Bool) {
@@ -118,7 +119,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func toggleViewsVisibility(isHidden: Bool) {
         shareButton?.isHidden = isHidden
-        toolbar?.isHidden = isHidden
         clearBotton?.isHidden = isHidden
     }
     
@@ -127,6 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField?.text = bottomDefaultText
         imagePickerView?.image = nil
         enableTextFields(enable: false)
+        toolbar?.isHidden = false
     }
     
     // Keyboard adjustments
