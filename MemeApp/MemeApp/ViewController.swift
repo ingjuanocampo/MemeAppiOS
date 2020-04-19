@@ -28,7 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: 3.0
+        NSAttributedString.Key.strokeWidth: -3.0
     ]
 
     
@@ -48,6 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField?.text = defaultText
         textField?.isHidden = true
         textField?.defaultTextAttributes = memeTextAttributes
+        textField?.textAlignment = .center
     }
 
     @IBAction func cameraSelected(_ sender: Any) {
