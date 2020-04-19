@@ -15,9 +15,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imagePickerView: UIImageView?
     
     @IBOutlet weak var cameraButton: UIButton?
-    @IBOutlet weak var shareButton: UIButton?
+    @IBOutlet weak var shareButton: UIBarButtonItem?
     @IBOutlet weak var toolbar: UIToolbar?
-    @IBOutlet weak var clearBotton: UIButton?
+    @IBOutlet weak var clearBotton: UIBarButtonItem?
+    
+    @IBOutlet weak var navigationBar: UINavigationBar?
+    
+
     
     var topDelegatetextField: TextDescriptionDelegate?
     var bottomDelegatetextField: TextDescriptionDelegate?
@@ -76,6 +80,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Cancel Image selector
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        toggleViewsVisibility(isHidden: false)
         dismiss(animated: true, completion: nil)
     }
     
@@ -88,7 +93,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         dismiss(animated: true, completion: nil)
-        toolbar?.isHidden = true
     }
     
     private func enableTextFields(enable: Bool) {
@@ -115,8 +119,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     private func toggleViewsVisibility(isHidden: Bool) {
-        shareButton?.isHidden = isHidden
-        clearBotton?.isHidden = isHidden
+        toolbar?.isHidden = isHidden
+        navigationBar?.isHidden = isHidden
     }
     
     private func clearView() {

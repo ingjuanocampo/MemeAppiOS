@@ -48,20 +48,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IC-m9-SPz">
-                                <rect key="frame" x="385" y="54" width="19" height="22"/>
-                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
-                                <connections>
-                                    <action selector="shareSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBX-7f-bG2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6e9-wk-NbB">
-                                <rect key="frame" x="10" y="54" width="19.5" height="22"/>
-                                <state key="normal" image="clear" catalog="system"/>
-                                <connections>
-                                    <action selector="clearSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vHa-1i-R6Y"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7E-8A-WP9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="MemeMe" id="kmm-Qo-AmW">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="clear" catalog="system" id="2ZF-i1-DyE">
+                                            <connections>
+                                                <action selector="clearSelected:" destination="BYZ-38-t0r" id="rHO-Ii-xXZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="Ejv-Zb-vjt">
+                                            <connections>
+                                                <action selector="shareSelected:" destination="BYZ-38-t0r" id="KTV-zC-SVc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -73,26 +76,26 @@
                             <constraint firstItem="ZcL-vc-RdS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dbz-S3-fpz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eqO-2p-f55" secondAttribute="trailing" constant="20" id="EM2-IU-UKo"/>
                             <constraint firstAttribute="bottom" secondItem="7Kk-mH-epS" secondAttribute="bottom" constant="64" id="Gyr-zF-R2f"/>
-                            <constraint firstItem="6e9-wk-NbB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JHG-56-3lc"/>
                             <constraint firstItem="4Ov-Gm-QnW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="JsU-RJ-y0W"/>
                             <constraint firstItem="ZcL-vc-RdS" firstAttribute="top" secondItem="7Kk-mH-epS" secondAttribute="bottom" id="Ns0-vX-AGI"/>
                             <constraint firstItem="ZcL-vc-RdS" firstAttribute="top" secondItem="eqO-2p-f55" secondAttribute="bottom" constant="75" id="Pxe-5l-Uyw"/>
-                            <constraint firstItem="2IC-m9-SPz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="UCt-Ov-BO6"/>
+                            <constraint firstItem="c7E-8A-WP9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QF6-ep-nrG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Kk-mH-epS" secondAttribute="trailing" id="XKu-oQ-G7W"/>
                             <constraint firstItem="7Kk-mH-epS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XP9-9p-iaW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2IC-m9-SPz" secondAttribute="trailing" constant="10" id="a2X-Ol-mEt"/>
+                            <constraint firstItem="c7E-8A-WP9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bk8-ko-iXt"/>
                             <constraint firstItem="4Ov-Gm-QnW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mKm-3b-Q3I"/>
                             <constraint firstItem="7Kk-mH-epS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mwK-dc-BAX"/>
-                            <constraint firstItem="6e9-wk-NbB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="yj4-Cz-7ef"/>
+                            <constraint firstAttribute="trailing" secondItem="c7E-8A-WP9" secondAttribute="trailing" id="v5t-iP-QcH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="eqO-2p-f55" id="4gx-KB-O3c"/>
                         <outlet property="cameraButton" destination="gQ4-Ar-OeG" id="SWi-FM-T8F"/>
-                        <outlet property="clearBotton" destination="6e9-wk-NbB" id="bzF-HI-jPI"/>
+                        <outlet property="clearBotton" destination="2ZF-i1-DyE" id="tVR-JR-iz1"/>
                         <outlet property="imagePickerView" destination="7Kk-mH-epS" id="mf6-vm-pKN"/>
-                        <outlet property="shareButton" destination="2IC-m9-SPz" id="Bsr-Mk-EkT"/>
+                        <outlet property="navigationBar" destination="c7E-8A-WP9" id="dRx-oy-gPR"/>
+                        <outlet property="shareButton" destination="Ejv-Zb-vjt" id="18p-SP-Ovr"/>
                         <outlet property="toolbar" destination="ZcL-vc-RdS" id="i1G-YT-F5R"/>
                         <outlet property="topTextField" destination="4Ov-Gm-QnW" id="XKw-fQ-PUf"/>
                     </connections>
