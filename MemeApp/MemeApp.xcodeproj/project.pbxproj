@@ -17,6 +17,9 @@
 		470C36C92442734F00BF3F36 /* MemeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C36C82442734F00BF3F36 /* MemeAppUITests.swift */; };
 		470C36D824438D5200BF3F36 /* TextDescriptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C36D724438D5200BF3F36 /* TextDescriptionDelegate.swift */; };
 		470C36DB2443ECA500BF3F36 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C36DA2443ECA500BF3F36 /* Meme.swift */; };
+		473EA614244D4B760021E9E6 /* MemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EA613244D4B760021E9E6 /* MemeRepository.swift */; };
+		473EA616244D4C4F0021E9E6 /* CacheMemeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EA615244D4C4F0021E9E6 /* CacheMemeRepository.swift */; };
+		473EA61B244D4D5B0021E9E6 /* ModuleDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EA61A244D4D5B0021E9E6 /* ModuleDI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		470C36CA2442734F00BF3F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		470C36D724438D5200BF3F36 /* TextDescriptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDescriptionDelegate.swift; sourceTree = "<group>"; };
 		470C36DA2443ECA500BF3F36 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		473EA613244D4B760021E9E6 /* MemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRepository.swift; sourceTree = "<group>"; };
+		473EA615244D4C4F0021E9E6 /* CacheMemeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMemeRepository.swift; sourceTree = "<group>"; };
+		473EA61A244D4D5B0021E9E6 /* ModuleDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				470C36A52442734D00BF3F36 /* MemeApp */,
-				470C36BC2442734F00BF3F36 /* MemeAppTests */,
 				470C36C72442734F00BF3F36 /* MemeAppUITests */,
 				470C36A42442734D00BF3F36 /* Products */,
 			);
@@ -103,6 +108,7 @@
 		470C36A52442734D00BF3F36 /* MemeApp */ = {
 			isa = PBXGroup;
 			children = (
+				473EA619244D4D370021E9E6 /* di */,
 				470C36D92443EC9600BF3F36 /* model */,
 				470C36D624438D1600BF3F36 /* text-delegate */,
 				470C36A62442734D00BF3F36 /* AppDelegate.swift */,
@@ -110,6 +116,7 @@
 				470C36AA2442734D00BF3F36 /* ViewController.swift */,
 				470C36AC2442734D00BF3F36 /* Main.storyboard */,
 				470C36AF2442734E00BF3F36 /* Assets.xcassets */,
+				470C36BC2442734F00BF3F36 /* MemeAppTests */,
 				470C36B12442734E00BF3F36 /* LaunchScreen.storyboard */,
 				470C36B42442734E00BF3F36 /* Info.plist */,
 			);
@@ -146,8 +153,18 @@
 			isa = PBXGroup;
 			children = (
 				470C36DA2443ECA500BF3F36 /* Meme.swift */,
+				473EA613244D4B760021E9E6 /* MemeRepository.swift */,
+				473EA615244D4C4F0021E9E6 /* CacheMemeRepository.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		473EA619244D4D370021E9E6 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				473EA61A244D4D5B0021E9E6 /* ModuleDI.swift */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +300,10 @@
 			files = (
 				470C36D824438D5200BF3F36 /* TextDescriptionDelegate.swift in Sources */,
 				470C36AB2442734D00BF3F36 /* ViewController.swift in Sources */,
+				473EA616244D4C4F0021E9E6 /* CacheMemeRepository.swift in Sources */,
 				470C36A72442734D00BF3F36 /* AppDelegate.swift in Sources */,
+				473EA61B244D4D5B0021E9E6 /* ModuleDI.swift in Sources */,
+				473EA614244D4B760021E9E6 /* MemeRepository.swift in Sources */,
 				470C36A92442734D00BF3F36 /* SceneDelegate.swift in Sources */,
 				470C36DB2443ECA500BF3F36 /* Meme.swift in Sources */,
 			);

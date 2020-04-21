@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var navigationBar: UINavigationBar?
     
 
+    var memeRepository = ModuleDI.providesMemeRepository()
     
     var topDelegatetextField: TextDescriptionDelegate?
     var bottomDelegatetextField: TextDescriptionDelegate?
@@ -105,6 +106,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func saveAndShare() {
         if let image = imagePickerView?.image {
             let meme = Meme(topText: topTextField?.text ?? "", bottomText: bottomTextField?.text ?? "", originalImage: image)
+            save(meme)
             toggleViewsVisibility(isHidden: true)
             let controller = UIActivityViewController(activityItems: [meme.generateMemedImage(view: self.view)], applicationActivities: nil)
             controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) in
@@ -116,6 +118,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             toggleViewsVisibility(isHidden: false)
             present(controller, animated: true, completion: nil)
         }
+    }
+    
+    private func save(_ meme: Meme) {
+        memeRepository.append(meme)
     }
     
     private func toggleViewsVisibility(isHidden: Bool) {
