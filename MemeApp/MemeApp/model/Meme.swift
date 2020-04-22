@@ -13,6 +13,7 @@ struct Meme {
     let topText: String
     let bottomText: String
     let originalImage: UIImage
+    var memeImage: UIImage? = nil
     
     init(topText: String, bottomText: String, originalImage: UIImage) {
         self.bottomText = bottomText
@@ -20,13 +21,13 @@ struct Meme {
         self.originalImage = originalImage
     }
     
-    func generateMemedImage(view: UIView) -> UIImage {
+    mutating func generateMemedImage(view: UIView) -> UIImage {
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
-        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        self.memeImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
                 
-        return memedImage
+        return self.memeImage ?? UIImage()
     }
 }

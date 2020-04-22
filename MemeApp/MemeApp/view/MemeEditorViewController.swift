@@ -8,18 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var topTextField: UITextField?
     @IBOutlet weak var bottomTextField: UITextField?
     @IBOutlet weak var imagePickerView: UIImageView?
-    
     @IBOutlet weak var cameraButton: UIButton?
     @IBOutlet weak var shareButton: UIBarButtonItem?
     @IBOutlet weak var toolbar: UIToolbar?
     @IBOutlet weak var clearBotton: UIBarButtonItem?
-    
-    @IBOutlet weak var navigationBar: UINavigationBar?
+    @IBOutlet weak var navigationBar: UINavigationItem?
     
 
     var memeRepository = ModuleDI.providesMemeRepository()
@@ -35,7 +33,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: -3.0
     ]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,10 +102,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func saveAndShare() {
         if let image = imagePickerView?.image {
-            let meme = Meme(topText: topTextField?.text ?? "", bottomText: bottomTextField?.text ?? "", originalImage: image)
+            var meme = Meme(topText: topTextField?.text ?? "", bottomText: bottomTextField?.text ?? "", originalImage: image)
+            let imageMeme = meme.generateMemedImage(view: self.view)
             save(meme)
             toggleViewsVisibility(isHidden: true)
-            let controller = UIActivityViewController(activityItems: [meme.generateMemedImage(view: self.view)], applicationActivities: nil)
+            let controller = UIActivityViewController(activityItems: [imageMeme], applicationActivities: nil)
             controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) in
                 if completed {
                     self.clearView()
@@ -126,7 +124,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func toggleViewsVisibility(isHidden: Bool) {
         toolbar?.isHidden = isHidden
-        navigationBar?.isHidden = isHidden
+        navigationController?.setNavigationBarHidden(isHidden, animated: false)
     }
     
     private func clearView() {
