@@ -18,23 +18,6 @@ class MemeListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         memes = memeRepository.getAlll()
         tableView.reloadData()
-      print("viewWillAppear")
-    }
-        
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
-    }
-    
-    override func viewDidLoad() {
-        print("viewDidLoad")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,12 +26,17 @@ class MemeListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeViewCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell", for: indexPath) as! MemeTableCell
+        
         let meme = self.memes?[(indexPath as NSIndexPath).row]
         
         if let memeImage = meme?.memeImage {
-            cell.imageView?.image = memeImage
+            cell.memeImage?.image = memeImage
         }
+        let memeText = (meme?.topText ?? "") + (meme?.bottomText ?? "")
+        
+        cell.memeText.text = memeText
+        
         return cell
     }
     
