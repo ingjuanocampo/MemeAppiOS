@@ -86,10 +86,10 @@
                                                         <constraint firstAttribute="height" constant="200" id="vIp-mg-5is"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-NA-TnB">
-                                                    <rect key="frame" x="204" y="58" width="190" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meme text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-NA-TnB">
+                                                    <rect key="frame" x="177" y="43" width="217" height="54"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -239,21 +239,21 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pdn-Ie-4Ma">
-                                    <size key="itemSize" width="129" height="123"/>
+                                    <size key="itemSize" width="163" height="196"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionCell" id="I59-Jy-BpD" customClass="MemeCollectionCell" customModule="MemeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="123"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jo5-Ao-LCB">
-                                            <rect key="frame" x="0.0" y="0.0" width="129" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTE-By-PzS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="123"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="123" id="JOQ-hp-q8Z"/>
                                                         <constraint firstAttribute="width" constant="129" id="rzE-rQ-WXE"/>
@@ -267,7 +267,7 @@
                                                 <constraint firstItem="tTE-By-PzS" firstAttribute="top" secondItem="Jo5-Ao-LCB" secondAttribute="top" id="bpk-sQ-fe3"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="129" height="123"/>
+                                        <size key="customSize" width="163" height="200"/>
                                         <connections>
                                             <outlet property="image" destination="tTE-By-PzS" id="RqL-13-Wnp"/>
                                         </connections>

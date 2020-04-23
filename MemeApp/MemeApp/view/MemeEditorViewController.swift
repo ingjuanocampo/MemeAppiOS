@@ -103,9 +103,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func saveAndShare() {
         if let image = imagePickerView?.image {
             var meme = Meme(topText: topTextField?.text ?? "", bottomText: bottomTextField?.text ?? "", originalImage: image)
+            toggleViewsVisibility(isHidden: true)
             let imageMeme = meme.generateMemedImage(view: self.view)
             save(meme)
-            toggleViewsVisibility(isHidden: true)
             let controller = UIActivityViewController(activityItems: [imageMeme], applicationActivities: nil)
             controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) in
                 if completed {
@@ -123,8 +123,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     private func toggleViewsVisibility(isHidden: Bool) {
-        toolbar?.isHidden = isHidden
         navigationController?.setNavigationBarHidden(isHidden, animated: false)
+        toolbar?.isHidden = isHidden
     }
     
     private func clearView() {
