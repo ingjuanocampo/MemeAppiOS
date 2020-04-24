@@ -37,7 +37,13 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionCell", for: indexPath) as! MemeCollectionCell
-        cell.image?.image = memes?[indexPath.row].memeImage
+        let meme = memes?[indexPath.row]
+        cell.image?.image = meme?.originalImage
+        
+        let topText = NSMutableAttributedString(string: meme?.topText ?? "", attributes: getMemeTextAttributes(true))
+        cell.topText.attributedText = topText
+        let bottomText = NSMutableAttributedString(string: meme?.bottomText ?? "", attributes: getMemeTextAttributes(true))
+        cell.bottomText.attributedText = bottomText
         return cell 
     }
     

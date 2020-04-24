@@ -24,6 +24,7 @@
 		473EA620244E91DE0021E9E6 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EA61F244E91DE0021E9E6 /* MemeCollectionViewController.swift */; };
 		473EA623244EA0B20021E9E6 /* MemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EA622244EA0B20021E9E6 /* MemeCollectionCell.swift */; };
 		4760972B24500063005E128E /* MemeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4760972A24500063005E128E /* MemeTableCell.swift */; };
+		478642F224513D7700665373 /* CommonVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478642F124513D7700665373 /* CommonVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		473EA61F244E91DE0021E9E6 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
 		473EA622244EA0B20021E9E6 /* MemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionCell.swift; sourceTree = "<group>"; };
 		4760972A24500063005E128E /* MemeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableCell.swift; sourceTree = "<group>"; };
+		478642F124513D7700665373 /* CommonVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		473EA61C244E91A30021E9E6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				478642F024513D6100665373 /* common */,
 				473EA621244EA0A40021E9E6 /* cell */,
 				470C36AA2442734D00BF3F36 /* MemeEditorViewController.swift */,
 				473EA61D244E91C60021E9E6 /* MemeListViewController.swift */,
@@ -193,6 +196,14 @@
 				4760972A24500063005E128E /* MemeTableCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		478642F024513D6100665373 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				478642F124513D7700665373 /* CommonVIew.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				473EA614244D4B760021E9E6 /* MemeRepository.swift in Sources */,
 				470C36A92442734D00BF3F36 /* SceneDelegate.swift in Sources */,
 				470C36DB2443ECA500BF3F36 /* Meme.swift in Sources */,
+				478642F224513D7700665373 /* CommonVIew.swift in Sources */,
 				473EA623244EA0B20021E9E6 /* MemeCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
