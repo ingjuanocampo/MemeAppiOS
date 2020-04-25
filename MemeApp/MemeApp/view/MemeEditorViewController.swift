@@ -20,7 +20,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var navigationBar: UINavigationItem?
     
 
-    var memeRepository = ModuleDI.providesMemeRepository()
+    private var memeRepository = ModuleDI.providesMemeRepository()
+    
+    var memeToEdit: Meme? = nil
     
     var topDelegatetextField: TextDescriptionDelegate?
     var bottomDelegatetextField: TextDescriptionDelegate?
@@ -29,6 +31,20 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDefaultView()
+        setEditModeIfNeeded()
+    }
+    
+    private func setEditModeIfNeeded() {
+        if let meme = memeToEdit {
+            topTextField?.text = meme.topText
+            bottomTextField?.text = meme.bottomText
+            imagePickerView?.image = meme.originalImage
+            enableTextFields(enable: true)
+        }
+    }
+    
+    private func setDefaultView() {
         topDelegatetextField = TextDescriptionDelegate(defaultText: topDefaultText)
         bottomDelegatetextField = TextDescriptionDelegate(defaultText: bottomDefaultText)
         shareButton?.isEnabled = false

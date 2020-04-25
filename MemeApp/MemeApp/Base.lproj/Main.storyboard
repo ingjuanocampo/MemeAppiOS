@@ -160,7 +160,7 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="581"/>
+            <point key="canvasLocation" x="1032" y="554"/>
         </scene>
         <!--Meme Collection View Controller-->
         <scene sceneID="CmC-Nz-zxz">

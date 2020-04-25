@@ -46,7 +46,10 @@ class MemeListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let memeSelected = memes?[indexPath.row]
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        controller.memeToEdit = memeSelected
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
