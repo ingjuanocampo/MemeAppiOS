@@ -119,6 +119,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) in
                 if completed {
                     self.clearView()
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
             

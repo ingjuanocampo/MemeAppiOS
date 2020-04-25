@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-584" y="236"/>
         </scene>
-        <!--Meme List View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="QeG-N5-NjR">
             <objects>
                 <viewController id="FEm-wT-JiY" customClass="MemeListViewController" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3nH-9e-p6Z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="o5u-3F-gx8">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="o5u-3F-gx8">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="4fs-5l-T7i">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="Gxg-35-Mnc"/>
@@ -248,7 +248,7 @@
             </objects>
             <point key="canvasLocation" x="1032" y="554"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="CmC-Nz-zxz">
             <objects>
                 <viewController id="dbo-c6-IvV" customClass="MemeCollectionViewController" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -354,7 +354,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTm-2L-rXi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rCd-ZX-oar">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="rCd-ZX-oar">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="LiV-Qs-Mga">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="fUY-KA-p5R"/>
