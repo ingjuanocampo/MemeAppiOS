@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeApp
 //
 //  Created by juan ocampo on 4/11/20.
@@ -173,7 +173,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField?.isEditing == true {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
         
     }

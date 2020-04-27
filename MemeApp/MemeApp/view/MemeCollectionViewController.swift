@@ -49,8 +49,8 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let memeSelected = memes?[indexPath.row]
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
-        controller.memeToEdit = memeSelected
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailController") as! MemeDetailController
+        controller.meme = memeSelected
         navigationController?.pushViewController(controller, animated: true)
     }
     
